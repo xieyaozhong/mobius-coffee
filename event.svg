@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
       <defs>
         <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-          <stop stop-color="#3b2117" offset="0"/>
-          <stop stop-color="#9f6740" offset="1"/>
+          <stop stop-color="#7a452b" offset="0"/>
+          <stop stop-color="#e7bd75" offset="1"/>
         </linearGradient>
         <radialGradient id="r" cx=".28" cy=".16" r=".72">
           <stop stop-color="rgba(255,255,255,.45)" offset="0"/>
@@ -13,7 +13,12 @@
       <rect width="960" height="540" fill="url(#r)"/>
       <circle cx="820" cy="70" r="190" fill="rgba(255,255,255,.10)"/>
       <circle cx="90" cy="470" r="210" fill="rgba(0,0,0,.12)"/>
-      <ellipse cx="160" cy="160" rx="54" ry="78" transform="rotate(-25 160 160)" fill="rgba(255,255,255,.22)"/><path d="M152 105 C186 150 125 190 170 230" stroke="rgba(255,255,255,.48)" stroke-width="9" fill="none" stroke-linecap="round"/><ellipse cx="255" cy="250" rx="54" ry="78" transform="rotate(-14 255 250)" fill="rgba(255,255,255,.22)"/><path d="M247 195 C281 240 220 280 265 320" stroke="rgba(255,255,255,.48)" stroke-width="9" fill="none" stroke-linecap="round"/><ellipse cx="350" cy="160" rx="54" ry="78" transform="rotate(-3 350 160)" fill="rgba(255,255,255,.22)"/><path d="M342 105 C376 150 315 190 360 230" stroke="rgba(255,255,255,.48)" stroke-width="9" fill="none" stroke-linecap="round"/><ellipse cx="445" cy="250" rx="54" ry="78" transform="rotate(8 445 250)" fill="rgba(255,255,255,.22)"/><path d="M437 195 C471 240 410 280 455 320" stroke="rgba(255,255,255,.48)" stroke-width="9" fill="none" stroke-linecap="round"/><ellipse cx="540" cy="160" rx="54" ry="78" transform="rotate(19 540 160)" fill="rgba(255,255,255,.22)"/><path d="M532 105 C566 150 505 190 550 230" stroke="rgba(255,255,255,.48)" stroke-width="9" fill="none" stroke-linecap="round"/><ellipse cx="635" cy="250" rx="54" ry="78" transform="rotate(30 635 250)" fill="rgba(255,255,255,.22)"/><path d="M627 195 C661 240 600 280 645 320" stroke="rgba(255,255,255,.48)" stroke-width="9" fill="none" stroke-linecap="round"/>
-      <text x="70" y="410" font-family="Arial, sans-serif" font-size="56" font-weight="800" fill="white">Hand Drip</text>
-      <text x="74" y="462" font-family="Arial, sans-serif" font-size="25" font-weight="600" fill="rgba(255,255,255,.78)">Ethiopia / berry / honey</text>
+      
+        <rect x="285" y="235" width="390" height="105" rx="42" fill="rgba(255,255,255,.84)"/>
+        <rect x="330" y="165" width="300" height="120" rx="34" fill="rgba(255,236,196,.92)"/>
+        <path d="M330 190 C390 142 480 222 555 168 C590 142 620 160 630 176 L630 190 Z" fill="rgba(115,55,30,.72)"/>
+        <ellipse cx="480" cy="348" rx="250" ry="30" fill="rgba(255,255,255,.25)"/>
+        
+      <text x="70" y="410" font-family="Arial, sans-serif" font-size="56" font-weight="800" fill="white">Brown Sugar Pudding</text>
+      <text x="74" y="462" font-family="Arial, sans-serif" font-size="25" font-weight="600" fill="rgba(255,255,255,.78)">Dessert pairing</text>
     </svg>

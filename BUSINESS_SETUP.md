@@ -1,20 +1,68 @@
-# Google Form 串接教學
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobius Coffee｜後台 Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">∞</span>
+      <span>Mobius Admin</span>
+    </a>
+    <nav class="nav visible">
+      <a href="index.html">回前台</a>
+    </nav>
+  </header>
 
-這個網站目前已經預留正式收單程式碼。
+  <main class="admin-page">
+    <section class="section">
+      <div class="section-head">
+        <p class="eyebrow">Admin Demo</p>
+        <h1>後台管理展示</h1>
+        <p>這是商業網站後台 Demo 介面，可作為未來 Django / Firebase 後台開發藍圖。</p>
+      </div>
 
-你需要做：
+      <img class="admin-hero-image" src="assets/hero-coffee.svg" alt="後台主視覺" />
 
-1. 建立一份 Google Form
-2. 欄位建議：
-   - 姓名
-   - 電話
-   - 日期
-   - 時間
-   - 人數
-   - 備註
-3. 打開表單原始碼，搜尋 `formResponse`
-4. 把網址貼到 `script.js` 的 `GOOGLE_FORM_URL`
-5. 搜尋 `entry.` 找到每個欄位 ID
-6. 把 `entry.姓名欄位ID` 等文字換成真正欄位 ID
+      <div class="dashboard">
+        <article class="stat">
+          <span>今日訂位</span>
+          <strong id="todayReservations">12</strong>
+        </article>
+        <article class="stat">
+          <span>活動報名</span>
+          <strong>38</strong>
+        </article>
+        <article class="stat">
+          <span>菜單品項</span>
+          <strong>24</strong>
+        </article>
+      </div>
 
-完成後，客人送出的訂位會進入 Google Form 回覆表。
+      <div class="admin-grid">
+        <section class="panel">
+          <h2>菜單管理</h2>
+          <table>
+            <tr><th>圖片</th><th>品項</th><th>分類</th><th>價格</th><th>狀態</th></tr>
+            <tr><td><img class="thumb" src="assets/latte.svg" alt=""></td><td>莫比烏斯拿鐵</td><td>咖啡</td><td>130</td><td>販售中</td></tr>
+            <tr><td><img class="thumb" src="assets/pudding.svg" alt=""></td><td>黑糖布丁</td><td>甜點</td><td>90</td><td>販售中</td></tr>
+            <tr><td><img class="thumb" src="assets/event.svg" alt=""></td><td>路人盃套餐</td><td>限定</td><td>250</td><td>活動中</td></tr>
+          </table>
+        </section>
+
+        <section class="panel">
+          <h2>最新訂位</h2>
+          <ul class="admin-list">
+            <li>王先生 · 2 位 · 週六 14:00</li>
+            <li>林小姐 · 4 位 · 週日 16:30</li>
+            <li>陳先生 · 1 位 · 今天 19:00</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
