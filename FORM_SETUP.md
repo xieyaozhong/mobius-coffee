@@ -1,34 +1,20 @@
-# Mobius Coffee 商業網站設定清單
+# Google Form 串接教學
 
-## 已放入的聯絡信箱
-handsomeboy784@gmail.com
+這個網站目前已經預留正式收單程式碼。
 
-## 你需要改成真實連結的位置
+你需要做：
 
-在 `index.html` 裡搜尋：
+1. 建立一份 Google Form
+2. 欄位建議：
+   - 姓名
+   - 電話
+   - 日期
+   - 時間
+   - 人數
+   - 備註
+3. 打開表單原始碼，搜尋 `formResponse`
+4. 把網址貼到 `script.js` 的 `GOOGLE_FORM_URL`
+5. 搜尋 `entry.` 找到每個欄位 ID
+6. 把 `entry.姓名欄位ID` 等文字換成真正欄位 ID
 
-- LINE 官方帳號
-- Instagram
-- Facebook
-- Google 商家 / 評價
-
-目前先放了佔位連結，等你有正式帳號後替換即可。
-
-## Google Form 串接
-
-網站目前有三種表單：
-
-1. 線上訂位表單
-2. 活動報名表單
-3. 聯絡我們表單
-
-目前會顯示送出成功。  
-要真正收到資料，需要把 `script.js` 裡的 Google Form URL 和 `entry.xxxxxx` 換成你的真實欄位 ID。
-
-## Gmail 按鈕
-
-已經加入：
-
-mailto:handsomeboy784@gmail.com
-
-使用者點擊後會開啟寄信程式。
+完成後，客人送出的訂位會進入 Google Form 回覆表。

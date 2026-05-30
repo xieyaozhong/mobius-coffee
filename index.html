@@ -1,20 +1,280 @@
-# Google Form 串接教學
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-這個網站目前已經預留正式收單程式碼。
+  <title>Mobius Coffee｜台中北屯精品咖啡、手沖、甜點、活動訂位</title>
+  <meta name="description" content="Mobius Coffee 位於台中市北屯區，提供精品咖啡、手沖咖啡、甜點、咖啡活動報名與線上訂位服務。" />
+  <meta name="keywords" content="Mobius Coffee, 台中咖啡, 北屯咖啡, 手沖咖啡, 咖啡活動, 咖啡路人盃" />
 
-你需要做：
+  <meta property="og:title" content="Mobius Coffee｜台中北屯精品咖啡" />
+  <meta property="og:description" content="精品咖啡、手沖、甜點、活動報名與線上訂位。" />
+  <meta property="og:image" content="assets/hero-coffee.svg" />
+  <meta property="og:type" content="website" />
 
-1. 建立一份 Google Form
-2. 欄位建議：
-   - 姓名
-   - 電話
-   - 日期
-   - 時間
-   - 人數
-   - 備註
-3. 打開表單原始碼，搜尋 `formResponse`
-4. 把網址貼到 `script.js` 的 `GOOGLE_FORM_URL`
-5. 搜尋 `entry.` 找到每個欄位 ID
-6. 把 `entry.姓名欄位ID` 等文字換成真正欄位 ID
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-完成後，客人送出的訂位會進入 Google Form 回覆表。
+<body>
+  <div class="announcement">
+    今日營業 12:00–20:00｜線上訂位與活動報名開放中
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <span class="brand-mark">∞</span>
+      <span>Mobius Coffee</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="開啟選單">☰</button>
+
+    <nav class="nav" id="nav">
+      <a href="#menu">菜單</a>
+      <a href="#reserve">訂位</a>
+      <a href="#events">活動</a>
+      <a href="#instagram">作品展示</a>
+      <a href="#map">位置</a>
+      <a class="admin-link" href="admin.html">後台 Demo</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">Specialty Coffee · Taichung Beitun</p>
+        <h1>台中北屯的精品咖啡、手沖與甜點空間</h1>
+        <p>
+          Mobius Coffee 提供精品咖啡、單品手沖、甜點、咖啡活動與線上訂位。
+          適合日常休息、朋友聚會、品牌合作與咖啡體驗課程。
+        </p>
+
+        <div class="business-info">
+          <span>營業時間：12:00–20:00</span>
+          <span>地址：台中市北屯區南京東路三段12巷28弄23號</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#reserve">立即線上訂位</a>
+          <a class="btn secondary" href="#menu">查看今日菜單</a>
+        </div>
+      </div>
+
+      <figure class="hero-visual">
+        <img src="assets/hero-coffee.svg" alt="Mobius Coffee 咖啡主視覺" />
+      </figure>
+    </section>
+
+    <section class="section trust-section">
+      <div class="trust-grid">
+        <article>
+          <strong>精品咖啡</strong>
+          <span>每日精選豆單</span>
+        </article>
+        <article>
+          <strong>線上訂位</strong>
+          <span>快速留下需求</span>
+        </article>
+        <article>
+          <strong>活動報名</strong>
+          <span>手沖課與咖啡賽</span>
+        </article>
+        <article>
+          <strong>可商業化</strong>
+          <span>可接表單與後台</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="section-head">
+        <p class="eyebrow">Menu</p>
+        <h2>今日菜單</h2>
+        <p>顯示品項、分類、價格與圖片。正式營運可接 Google Sheet、Firebase 或 Django 後台更新。</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-filter="all">全部</button>
+        <button class="filter" data-filter="coffee">咖啡</button>
+        <button class="filter" data-filter="dessert">甜點</button>
+        <button class="filter" data-filter="special">限定</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <article class="menu-item" data-category="coffee">
+          <img src="assets/latte.svg" alt="莫比烏斯拿鐵" />
+          <div class="menu-body">
+            <span class="pill">Coffee</span>
+            <h3>莫比烏斯拿鐵</h3>
+            <p>濃縮、鮮奶、焦糖堅果尾韻</p>
+            <strong>NT$ 130</strong>
+            <button class="mini-btn" data-product="莫比烏斯拿鐵">加入詢問</button>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="coffee">
+          <img src="assets/handdrip.svg" alt="單品手沖" />
+          <div class="menu-body">
+            <span class="pill">Hand Drip</span>
+            <h3>單品手沖</h3>
+            <p>依每日豆單提供風味選擇</p>
+            <strong>NT$ 160 起</strong>
+            <button class="mini-btn" data-product="單品手沖">加入詢問</button>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="dessert">
+          <img src="assets/pudding.svg" alt="黑糖布丁" />
+          <div class="menu-body">
+            <span class="pill">Dessert</span>
+            <h3>黑糖布丁</h3>
+            <p>濃厚蛋香與微苦焦糖</p>
+            <strong>NT$ 90</strong>
+            <button class="mini-btn" data-product="黑糖布丁">加入詢問</button>
+          </div>
+        </article>
+
+        <article class="menu-item" data-category="special">
+          <img src="assets/event.svg" alt="咖啡路人盃套餐" />
+          <div class="menu-body">
+            <span class="pill">Limited</span>
+            <h3>咖啡路人盃套餐</h3>
+            <p>黑咖啡試飲組與活動入場券</p>
+            <strong>NT$ 250</strong>
+            <button class="mini-btn" data-product="咖啡路人盃套餐">加入詢問</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="split" id="reserve">
+      <div>
+        <p class="eyebrow">Reservation</p>
+        <h2>線上訂位</h2>
+        <p>
+          客人可直接填寫訂位資料。此版本會先在前端顯示送出成功，
+          你只要把 Google Form 欄位 ID 填入，就能正式收單。
+        </p>
+        <img class="side-image" src="assets/ig-5.svg" alt="咖啡館早晨圖片" />
+      </div>
+
+      <form class="form-card" id="reservationForm">
+        <label>姓名<input name="name" type="text" placeholder="請輸入姓名" required /></label>
+        <label>電話<input name="phone" type="tel" placeholder="09xx-xxx-xxx" required /></label>
+        <label>日期<input name="date" type="date" required /></label>
+        <label>時間
+          <select name="time" required>
+            <option value="">請選擇時間</option>
+            <option>12:00</option>
+            <option>13:00</option>
+            <option>14:00</option>
+            <option>15:00</option>
+            <option>16:00</option>
+            <option>17:00</option>
+            <option>18:00</option>
+            <option>19:00</option>
+          </select>
+        </label>
+        <label>人數<input name="people" type="number" min="1" max="12" value="2" required /></label>
+        <label>備註<textarea name="note" placeholder="例如：靠窗、生日、需要插座"></textarea></label>
+        <button type="submit" class="btn primary">送出訂位</button>
+        <p class="form-status" id="reservationStatus"></p>
+      </form>
+    </section>
+
+    <section class="section dark" id="events">
+      <div class="section-head">
+        <p class="eyebrow">Events</p>
+        <h2>咖啡活動報名</h2>
+        <p>適合放咖啡比賽、手沖課、杯測活動、品牌合作企劃。</p>
+      </div>
+
+      <div class="event-card">
+        <img src="assets/event.svg" alt="咖啡路人盃活動圖片" />
+        <div>
+          <span class="pill">Open Event</span>
+          <h3>咖啡路人盃</h3>
+          <p>不限豆種、不限烘焙、不限器材，只要是黑咖啡就能參賽。</p>
+          <form class="inline-form" id="eventForm">
+            <input name="eventName" type="text" placeholder="姓名" required />
+            <input name="eventPhone" type="tel" placeholder="電話" required />
+            <button class="btn primary" type="submit">我要報名</button>
+          </form>
+          <p class="form-status light" id="eventStatus"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="instagram">
+      <div class="section-head">
+        <p class="eyebrow">Instagram Wall</p>
+        <h2>作品展示</h2>
+        <p>可放 IG 貼文、咖啡照片、比賽紀錄、甜點新品與品牌日常。</p>
+      </div>
+
+      <div class="ig-showcase">
+        <img src="assets/mobius-instagram-gallery.png" alt="Mobius Coffee Instagram 作品展示圖" />
+      </div>
+    </section>
+
+    <section class="section map-section" id="map">
+      <div class="section-head">
+        <p class="eyebrow">Location</p>
+        <h2>店面位置</h2>
+        <p>顯示完整地址，並提供 Google Maps、Apple Maps 一鍵導航功能。</p>
+      </div>
+
+      <div class="map-card location-card">
+        <img src="assets/map.svg" alt="Mobius Coffee 地圖與店面位置視覺" />
+        <div class="location-info">
+          <span class="pill">Visit Us</span>
+          <h3>Mobius Coffee 店面位置</h3>
+          <p class="address" id="storeAddress">台中市北屯區南京東路三段12巷28弄23號</p>
+
+          <div class="contact-lines">
+            <p>電話：<a href="tel:04-0000-0000">04-0000-0000</a></p>
+            <p>Email：<a href="mailto:hello@mobiuscoffee.com">hello@mobiuscoffee.com</a></p>
+          </div>
+
+          <div class="map-actions">
+            <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=台中市北屯區南京東路三段12巷28弄23號" target="_blank" rel="noopener">Google Maps 導航</a>
+            <a class="btn secondary" href="https://maps.apple.com/?q=台中市北屯區南京東路三段12巷28弄23號" target="_blank" rel="noopener">Apple Maps 導航</a>
+            <button class="btn copy-btn" type="button" data-copy="台中市北屯區南京東路三段12巷28弄23號">複製地址</button>
+          </div>
+          <p class="hint">手機點選導航按鈕後，會自動開啟地圖 App 或瀏覽器地圖。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>常見問題</h2>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>可以訂位嗎？</summary>
+          <p>可以，請使用線上訂位表單留下姓名、電話、日期、時間與人數。</p>
+        </details>
+        <details>
+          <summary>可以辦活動或包場嗎？</summary>
+          <p>可以，可透過活動報名或 Email 聯繫，告訴我們人數、日期與活動需求。</p>
+        </details>
+        <details>
+          <summary>網站資料可以真的收到嗎？</summary>
+          <p>可以。將表單串接 Google Form、Firebase 或 Django 後台後，就能正式收資料。</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-cta" href="#reserve">訂位</a>
+
+  <footer class="footer">
+    <p>© 2026 Mobius Coffee. 台中市北屯區南京東路三段12巷28弄23號</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
