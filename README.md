@@ -1,27 +1,15 @@
-# Mobius Coffee Pro Website
+# Mobius Coffee Pro Images
 
-這是 Mobius Coffee 的作品集等級靜態網站版本。
+已加入完整美觀圖片版本。
 
-## 功能區塊
-- 線上菜單展示與分類篩選
-- 線上訂位表單介面
-- 咖啡活動報名區
-- IG 作品展示牆
-- Google 地圖嵌入區
-- 後台管理 Demo 頁面
+## 新增內容
+- assets/hero-coffee.svg：首頁主視覺
+- 菜單圖片：latte、handdrip、pudding、event
+- 活動圖片
+- IG 展示牆 6 張圖片
+- 地圖區塊視覺圖
+- 後台 Demo 圖片縮圖
 
-## 檔案
-- index.html：前台網站
-- admin.html：後台展示頁
-- style.css：整體樣式
-- script.js：互動功能
-
-## 上線方式
-可以直接上傳到 GitHub Pages、Netlify 或 Vercel。
-
-## 下一步可升級
-- 接 Firebase 儲存訂位資料
-- 接 Google Form 收報名
-- 接 Django 後台管理菜單
-- 加入真正會員登入
-- 串接 Instagram API
+## 使用方式
+打開 index.html 即可預覽。
+上傳整個資料夾到 GitHub Pages 即可上線。

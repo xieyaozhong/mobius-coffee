@@ -37,52 +37,64 @@
           <a class="btn secondary" href="#menu">查看菜單</a>
         </div>
       </div>
-      <div class="hero-panel">
-        <div class="coffee-card">
-          <span>今日推薦</span>
-          <h2>莓果花香手沖</h2>
-          <p>衣索比亞 · 淺焙 · 草莓、佛手柑、蜂蜜尾韻</p>
-          <strong>NT$ 180</strong>
-        </div>
-      </div>
+      <figure class="hero-visual">
+        <img src="assets/hero-coffee.svg" alt="Mobius Coffee 主視覺咖啡圖片" />
+      </figure>
     </section>
 
     <section class="section" id="menu">
       <div class="section-head">
         <p class="eyebrow">Online Menu</p>
         <h2>線上菜單管理感</h2>
-        <p>前台可以展示品項、價格、分類與狀態，未來可接 Firebase 或 Django 後台。</p>
+        <p>前台可以展示品項、價格、分類、狀態與商品圖片，未來可接 Firebase 或 Django 後台。</p>
       </div>
+
       <div class="filters">
         <button class="filter active" data-filter="all">全部</button>
         <button class="filter" data-filter="coffee">咖啡</button>
         <button class="filter" data-filter="dessert">甜點</button>
         <button class="filter" data-filter="special">限定</button>
       </div>
+
       <div class="menu-grid" id="menuGrid">
         <article class="menu-item" data-category="coffee">
-          <span class="pill">Coffee</span>
-          <h3>莫比烏斯拿鐵</h3>
-          <p>濃縮、鮮奶、焦糖堅果尾韻</p>
-          <strong>NT$ 130</strong>
+          <img src="assets/latte.svg" alt="莫比烏斯拿鐵" />
+          <div class="menu-body">
+            <span class="pill">Coffee</span>
+            <h3>莫比烏斯拿鐵</h3>
+            <p>濃縮、鮮奶、焦糖堅果尾韻</p>
+            <strong>NT$ 130</strong>
+          </div>
         </article>
+
         <article class="menu-item" data-category="coffee">
-          <span class="pill">Hand Drip</span>
-          <h3>單品手沖</h3>
-          <p>依每日豆單提供風味選擇</p>
-          <strong>NT$ 160 起</strong>
+          <img src="assets/handdrip.svg" alt="單品手沖" />
+          <div class="menu-body">
+            <span class="pill">Hand Drip</span>
+            <h3>單品手沖</h3>
+            <p>依每日豆單提供風味選擇</p>
+            <strong>NT$ 160 起</strong>
+          </div>
         </article>
+
         <article class="menu-item" data-category="dessert">
-          <span class="pill">Dessert</span>
-          <h3>黑糖布丁</h3>
-          <p>濃厚蛋香與微苦焦糖</p>
-          <strong>NT$ 90</strong>
+          <img src="assets/pudding.svg" alt="黑糖布丁" />
+          <div class="menu-body">
+            <span class="pill">Dessert</span>
+            <h3>黑糖布丁</h3>
+            <p>濃厚蛋香與微苦焦糖</p>
+            <strong>NT$ 90</strong>
+          </div>
         </article>
+
         <article class="menu-item" data-category="special">
-          <span class="pill">Limited</span>
-          <h3>咖啡路人盃套餐</h3>
-          <p>黑咖啡試飲組與活動入場券</p>
-          <strong>NT$ 250</strong>
+          <img src="assets/event.svg" alt="咖啡路人盃套餐" />
+          <div class="menu-body">
+            <span class="pill">Limited</span>
+            <h3>咖啡路人盃套餐</h3>
+            <p>黑咖啡試飲組與活動入場券</p>
+            <strong>NT$ 250</strong>
+          </div>
         </article>
       </div>
     </section>
@@ -95,6 +107,7 @@
           這裡可以先用表單收集訂位資料。正式版可接 Google Form、Firebase、
           或 Django 後台儲存訂位紀錄。
         </p>
+        <img class="side-image" src="assets/ig-5.svg" alt="咖啡館早晨圖片" />
       </div>
       <form class="form-card">
         <label>姓名<input type="text" placeholder="請輸入姓名" /></label>
@@ -111,13 +124,15 @@
         <h2>咖啡活動報名</h2>
         <p>適合放咖啡比賽、手沖課、杯測活動、品牌合作企劃。</p>
       </div>
+
       <div class="event-card">
+        <img src="assets/event.svg" alt="咖啡路人盃活動圖片" />
         <div>
           <span class="pill">Open Event</span>
           <h3>咖啡路人盃</h3>
           <p>不限豆種、不限烘焙、不限器材，只要是黑咖啡就能參賽。</p>
+          <a class="btn primary" href="#reserve">報名活動</a>
         </div>
-        <a class="btn primary" href="#reserve">報名活動</a>
       </div>
     </section>
 
@@ -127,13 +142,14 @@
         <h2>IG 作品展示牆</h2>
         <p>可以放咖啡照片、比賽紀錄、甜點新品與品牌日常。</p>
       </div>
+
       <div class="ig-grid">
-        <div>Latte Art</div>
-        <div>Hand Drip</div>
-        <div>Competition</div>
-        <div>Dessert</div>
-        <div>Slow Morning</div>
-        <div>Mobius Night</div>
+        <img src="assets/ig-1.svg" alt="Latte Art" />
+        <img src="assets/ig-2.svg" alt="Hand Drip" />
+        <img src="assets/ig-3.svg" alt="Competition" />
+        <img src="assets/ig-4.svg" alt="Dessert" />
+        <img src="assets/ig-5.svg" alt="Slow Morning" />
+        <img src="assets/ig-6.svg" alt="Mobius Night" />
       </div>
     </section>
 
@@ -141,11 +157,15 @@
       <div class="section-head">
         <p class="eyebrow">Location</p>
         <h2>Google 地圖區塊</h2>
-        <p>正式上線時，把 iframe 換成你店家的 Google Maps 嵌入碼即可。</p>
+        <p>正式上線時，把圖片下方區塊換成你店家的 Google Maps iframe 嵌入碼即可。</p>
       </div>
-      <div class="map-placeholder">
-        <span>Google Map Embed Area</span>
-        <p>台中市北屯區 · Mobius Coffee</p>
+
+      <div class="map-card">
+        <img src="assets/map.svg" alt="Mobius Coffee 地圖與店面位置視覺" />
+        <div class="map-placeholder">
+          <span>Google Map Embed Area</span>
+          <p>台中市北屯區 · Mobius Coffee</p>
+        </div>
       </div>
     </section>
   </main>
