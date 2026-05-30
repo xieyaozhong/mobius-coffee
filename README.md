@@ -1,17 +1,27 @@
-# Mobius Coffee Website
+# Mobius Coffee Pro Website
 
-這是一個靜態咖啡品牌網站，可以直接部署到 GitHub Pages、Netlify、Vercel 或任何靜態主機。
+這是 Mobius Coffee 的作品集等級靜態網站版本。
+
+## 功能區塊
+- 線上菜單展示與分類篩選
+- 線上訂位表單介面
+- 咖啡活動報名區
+- IG 作品展示牆
+- Google 地圖嵌入區
+- 後台管理 Demo 頁面
 
 ## 檔案
-- `index.html`：網站內容
-- `style.css`：視覺樣式
-- `script.js`：手機選單互動
+- index.html：前台網站
+- admin.html：後台展示頁
+- style.css：整體樣式
+- script.js：互動功能
 
-## 使用方式
-直接打開 `index.html` 即可預覽。
+## 上線方式
+可以直接上傳到 GitHub Pages、Netlify 或 Vercel。
 
-## 建議下一步
-1. 替換地址、Email、菜單價格
-2. 加入真實咖啡照片
-3. 接 Google Form 或後端表單
-4. 部署到 GitHub Pages
+## 下一步可升級
+- 接 Firebase 儲存訂位資料
+- 接 Google Form 收報名
+- 接 Django 後台管理菜單
+- 加入真正會員登入
+- 串接 Instagram API

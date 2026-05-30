@@ -1,12 +1,23 @@
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+const navToggle = document.querySelector("#navToggle");
+const nav = document.querySelector("#nav");
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-});
+if (navToggle && nav) {
+  navToggle.addEventListener("click", () => nav.classList.toggle("open"));
+}
 
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
+document.querySelectorAll(".filter").forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+
+    document.querySelectorAll(".filter").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    document.querySelectorAll(".menu-item").forEach((item) => {
+      const match = filter === "all" || item.dataset.category === filter;
+      item.style.display = match ? "block" : "none";
+    });
   });
 });

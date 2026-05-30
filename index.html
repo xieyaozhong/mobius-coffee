@@ -3,120 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mobius Coffee｜莫比烏斯咖啡</title>
+  <title>Mobius Coffee｜品牌咖啡網站</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav">
-      <div class="logo">Mobius Coffee</div>
-      <button class="menu-toggle" id="menuToggle">☰</button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">首頁</a></li>
-        <li><a href="#menu">菜單</a></li>
-        <li><a href="#story">品牌故事</a></li>
-        <li><a href="#event">活動</a></li>
-        <li><a href="#contact">聯絡</a></li>
-      </ul>
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <span class="brand-mark">∞</span>
+      <span>Mobius Coffee</span>
+    </a>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#menu">線上菜單</a>
+      <a href="#reserve">線上訂位</a>
+      <a href="#events">活動報名</a>
+      <a href="#instagram">IG 展示牆</a>
+      <a href="#map">地圖</a>
+      <a class="admin-link" href="admin.html">後台 Demo</a>
     </nav>
   </header>
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-content">
-        <p class="eyebrow">Specialty Coffee · Slow Life · Taichung</p>
-        <h1>一杯咖啡，讓時間繞回自己身上</h1>
-        <p class="hero-text">
-          Mobius Coffee 是一間以手沖、甜點與日常靈感為核心的咖啡網站。
-          適合展示菜單、咖啡比賽、線上預約與品牌故事。
+      <div class="hero-copy">
+        <p class="eyebrow">Specialty Coffee · Taichung · Slow Design</p>
+        <h1>把咖啡、活動與品牌故事，做成一個真正能營業的網站</h1>
+        <p>
+          Mobius Coffee 是一個高質感咖啡品牌網站範本，適合放作品集、咖啡店提案、
+          線上菜單、活動報名、訂位與後台展示。
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#menu">查看菜單</a>
-          <a class="btn ghost" href="#contact">預約合作</a>
+          <a class="btn primary" href="#reserve">立即訂位</a>
+          <a class="btn secondary" href="#menu">查看菜單</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="coffee-card">
+          <span>今日推薦</span>
+          <h2>莓果花香手沖</h2>
+          <p>衣索比亞 · 淺焙 · 草莓、佛手柑、蜂蜜尾韻</p>
+          <strong>NT$ 180</strong>
         </div>
       </div>
     </section>
 
     <section class="section" id="menu">
-      <div class="section-title">
-        <p class="eyebrow">Our Menu</p>
-        <h2>人氣咖啡</h2>
+      <div class="section-head">
+        <p class="eyebrow">Online Menu</p>
+        <h2>線上菜單管理感</h2>
+        <p>前台可以展示品項、價格、分類與狀態，未來可接 Firebase 或 Django 後台。</p>
       </div>
-
-      <div class="cards">
-        <article class="card">
-          <span class="tag">Signature</span>
+      <div class="filters">
+        <button class="filter active" data-filter="all">全部</button>
+        <button class="filter" data-filter="coffee">咖啡</button>
+        <button class="filter" data-filter="dessert">甜點</button>
+        <button class="filter" data-filter="special">限定</button>
+      </div>
+      <div class="menu-grid" id="menuGrid">
+        <article class="menu-item" data-category="coffee">
+          <span class="pill">Coffee</span>
           <h3>莫比烏斯拿鐵</h3>
-          <p>濃縮咖啡、鮮奶、焦糖堅果尾韻，適合第一次認識我們的人。</p>
+          <p>濃縮、鮮奶、焦糖堅果尾韻</p>
           <strong>NT$ 130</strong>
         </article>
-
-        <article class="card">
-          <span class="tag">Hand Drip</span>
+        <article class="menu-item" data-category="coffee">
+          <span class="pill">Hand Drip</span>
           <h3>單品手沖</h3>
-          <p>每日精選豆單，依風味調整水溫與萃取節奏。</p>
+          <p>依每日豆單提供風味選擇</p>
           <strong>NT$ 160 起</strong>
         </article>
-
-        <article class="card">
-          <span class="tag">Dessert</span>
+        <article class="menu-item" data-category="dessert">
+          <span class="pill">Dessert</span>
           <h3>黑糖布丁</h3>
-          <p>濃厚蛋香與微苦焦糖，適合搭配中深焙咖啡。</p>
+          <p>濃厚蛋香與微苦焦糖</p>
           <strong>NT$ 90</strong>
+        </article>
+        <article class="menu-item" data-category="special">
+          <span class="pill">Limited</span>
+          <h3>咖啡路人盃套餐</h3>
+          <p>黑咖啡試飲組與活動入場券</p>
+          <strong>NT$ 250</strong>
         </article>
       </div>
     </section>
 
-    <section class="story" id="story">
+    <section class="split" id="reserve">
       <div>
-        <p class="eyebrow">Brand Story</p>
-        <h2>我們相信咖啡不是結束，而是一個循環</h2>
+        <p class="eyebrow">Reservation</p>
+        <h2>線上訂位</h2>
+        <p>
+          這裡可以先用表單收集訂位資料。正式版可接 Google Form、Firebase、
+          或 Django 後台儲存訂位紀錄。
+        </p>
       </div>
-      <p>
-        Mobius Coffee 的名字來自莫比烏斯環。它沒有明確的正面與反面，
-        就像生活裡的創作、工作與休息，最後都會回到同一個核心：
-        好好感受當下。
-      </p>
+      <form class="form-card">
+        <label>姓名<input type="text" placeholder="請輸入姓名" /></label>
+        <label>電話<input type="tel" placeholder="09xx-xxx-xxx" /></label>
+        <label>日期<input type="date" /></label>
+        <label>人數<input type="number" min="1" max="12" value="2" /></label>
+        <button type="button" class="btn primary">送出訂位 Demo</button>
+      </form>
     </section>
 
-    <section class="section dark" id="event">
-      <div class="section-title">
-        <p class="eyebrow">Event</p>
-        <h2>咖啡路人盃</h2>
+    <section class="section dark" id="events">
+      <div class="section-head">
+        <p class="eyebrow">Events</p>
+        <h2>咖啡活動報名</h2>
+        <p>適合放咖啡比賽、手沖課、杯測活動、品牌合作企劃。</p>
       </div>
-      <p class="event-text">
-        不限豆種、不限烘焙、不限器材，只要是黑咖啡就能參賽。
-        用最自由的方式，找出你心中真正好喝的一杯。
-      </p>
-      <a class="btn primary" href="#contact">報名洽詢</a>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="section-title">
-        <p class="eyebrow">Contact</p>
-        <h2>聯絡我們</h2>
-      </div>
-
-      <div class="contact-grid">
+      <div class="event-card">
         <div>
-          <h3>Mobius Coffee</h3>
-          <p>地址：台中市某某區咖啡路 1 號</p>
-          <p>營業時間：12:00–20:00</p>
-          <p>Email：hello@mobiuscoffee.com</p>
+          <span class="pill">Open Event</span>
+          <h3>咖啡路人盃</h3>
+          <p>不限豆種、不限烘焙、不限器材，只要是黑咖啡就能參賽。</p>
         </div>
+        <a class="btn primary" href="#reserve">報名活動</a>
+      </div>
+    </section>
 
-        <form class="form">
-          <input type="text" placeholder="你的名字" />
-          <input type="email" placeholder="Email" />
-          <textarea placeholder="想詢問的內容"></textarea>
-          <button type="button" class="btn primary">送出訊息</button>
-        </form>
+    <section class="section" id="instagram">
+      <div class="section-head">
+        <p class="eyebrow">Instagram Wall</p>
+        <h2>IG 作品展示牆</h2>
+        <p>可以放咖啡照片、比賽紀錄、甜點新品與品牌日常。</p>
+      </div>
+      <div class="ig-grid">
+        <div>Latte Art</div>
+        <div>Hand Drip</div>
+        <div>Competition</div>
+        <div>Dessert</div>
+        <div>Slow Morning</div>
+        <div>Mobius Night</div>
+      </div>
+    </section>
+
+    <section class="section map-section" id="map">
+      <div class="section-head">
+        <p class="eyebrow">Location</p>
+        <h2>Google 地圖區塊</h2>
+        <p>正式上線時，把 iframe 換成你店家的 Google Maps 嵌入碼即可。</p>
+      </div>
+      <div class="map-placeholder">
+        <span>Google Map Embed Area</span>
+        <p>台中市北屯區 · Mobius Coffee</p>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2026 Mobius Coffee. Crafted with calm and caffeine.</p>
+  <footer class="footer">
+    <p>© 2026 Mobius Coffee. Built for brand, business and portfolio.</p>
   </footer>
 
   <script src="script.js"></script>
